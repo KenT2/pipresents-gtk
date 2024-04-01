@@ -65,7 +65,6 @@
    "transition": "cut",
    "type": "artmediashow",
    "webkit-freeze-at-end": "yes",
-   "webkit-other-options": "",
    "webkit-window": "200+200+600*400",
    "webkit-zoom": "1.0"
   },

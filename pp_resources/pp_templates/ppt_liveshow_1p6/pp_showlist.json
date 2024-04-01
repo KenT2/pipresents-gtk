@@ -87,7 +87,6 @@
    "trigger-wait-text": "Waiting for Trigger....",
    "type": "liveshow",
    "webkit-freeze-at-end": "yes",
-   "webkit-other-options": "",
    "webkit-window": "200+200+600*400",
    "webkit-zoom": "1.0"
   },
