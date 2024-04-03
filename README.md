@@ -52,13 +52,13 @@ INSTALLING PI PRESENTS GTK
 
 The instructions here assume the user is pi
 
-The full manual in English is here https://github.com/KenT2/pipresents-kms/blob/master/manual.pdf. It will be downloaded with Pi Presents.
+The full manual in English is here https://github.com/KenT2/pipresents-gtk/blob/master/manual.pdf. It will be downloaded with Pi Presents.
 
 
 Requirements
 -------------
  
-	* must use the latest version of RPi OS Bookworm with Desktop 32 bit, (not the Lite version)
+	* must use the latest version of RPi OS Bookworm with Desktop 32???? bit, (not the Lite version)
 	* must be run from the PIXEL desktop.
 	* can be installed and run from any user that is created with RPi OS utilities
 	* should use a clean install of RPi OS, particularly if you intend to use GPIO
@@ -66,7 +66,7 @@ Requirements
 Install RPi OS Bookworm
 -----------------------
 
-Image a SD Card with the RPi OS Bookworm with desktop (32 Bit).
+Image a SD Card with the RPi OS Bookworm with desktop (32 Bit)?????.
 
 Ensure the OS is up to date:
 
@@ -77,9 +77,9 @@ Ensure the OS is up to date:
 Install required packages 
 -----------------------------
          sudo apt install libgtk-4-dev
-         sudo apt libwebkitgtk-6.0-dev
+         sudo apt install libwebkitgtk-6.0-dev
          sudo apt install python3-mpv
-         sudo apt python3-pymediainfo
+         sudo apt install python3-pymediainfo
          sudo apt install mpg123         
          
 Install optional packages??????????
@@ -95,7 +95,7 @@ Download Pi Presents GTK
 THE GUI WAY
         Using a browser go to https://github.com/KenT2/pipresents-gtk
         Click the green CODE button and Download ZIP
-        There should now be a directory 'KenT2-pipresents-gtk-master' in your /downloads directory. Unzip the file and copy the directory to /home. Rename it to pipresents
+        There should now be a file 'pipresents-gtk-master.zip' in your /downloads directory. Unzip the file and copy the directory to /home. Rename it to pipresents
 
 THE COMMAND LINE WAY
 From a terminal window open in your home directory type:
@@ -120,7 +120,7 @@ Examples are in the github repository pipresents-gtk-examples.
 THE GUI WAY
         Using a browser go to https://github.com/KenT2/pipresents-gtk-examples
         Click the green CODE button and Download ZIP
-        There should now be a directory 'KenT2-pipresents-gtk-examples-master' in your /downloads directory. Unzip the file and copy the directory to /home.
+        There should now be a file pipresents-gtk-examples-master.zip' in your /downloads directory. Unzip the file and copy the directory /pp_home to /home.
 
 THE COMMAND LINE WAY
 open a terminal window in your home directory and type:
@@ -133,13 +133,13 @@ Running an Example Profile
 --------------------------
 From a terminal window opened in the pipresents directory type:
 
-         python pipresents.py -p pp_mediashow_1p6
+         GTK_A11Y=none python pipresents.py -p pp_mediashow_1p6
  
 to see a repeating multimedia show
 
 Exit this with CTRL-BREAK or closing the window, then:
 
-          python pipresents.py -p pp_mediashow_1p6 -f
+          GTK_A11Y=none python pipresents.py -p pp_mediashow_1p6 -f
  
 to display full screen
 
@@ -159,7 +159,7 @@ Do not copy across pp_audio.cfg, pp_display.cfg, or pp_editor.cfg
 
 If you have modified it, make the edits to  pp_web.cfg. If you are using a username other than pi then edit the appropriate fields.
 
-Copy any other files you have changed in pp_config,  pp_email.cfg, pp_oscmonitor.cfg, pp_oscremote.cfg
+Copy any other files you have changed in pp_config, -   pp_email.cfg, pp_oscmonitor.cfg, pp_oscremote.cfg
 
 
 pp_io_config in /pipresents or in a profile 

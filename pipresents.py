@@ -777,7 +777,7 @@ class PiPresents(object):
 
     # callback from ShowManager when all shows have ended
     def all_shows_ended_callback(self,reason,message):
-        print ('in all shows ended callback',reason)
+        #print ('in all shows ended callback',reason)
         for display_name in DisplayManager.displays:
             status,message,display_name=self.dm.is_display_connected(display_name)
             if status =='normal':
