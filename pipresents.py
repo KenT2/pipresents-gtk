@@ -746,7 +746,7 @@ class PiPresents(object):
         self.terminate()
 
 
-    def handle_user_abort(self):
+    def handle_user_abort(self,win):
         self.mon.log(self,'User abort received')
         self.terminate()
 
@@ -790,7 +790,7 @@ class PiPresents(object):
     # for use after logging is started but before ????
     def error_exit(self,caller,text):
         r_class=caller.__class__.__name__
-        print (r_class,': ',text)
+        print ('\nSTARTUP ERROR: ',text)
         self.mon.log(self,r_class+': '+text)
         #self.mon.finish()
         self.end('error','Startup Error')
@@ -839,15 +839,17 @@ class PiPresents(object):
 
             # close logging files
             self.mon.finish()
+            
             if self.restartpipresents_required is True:
-                print ('restart')
+                print ('restart exit')
+                self.app.quit()
                 return
 
             if self.reboot_required is True:
-                # print 'REBOOT'
+                print ('reboot exit')
                 call (['sudo','reboot'])
             if self.shutdown_required is True:
-                # print 'SHUTDOWN'
+                print ('shutdown exit')
                 call (['sudo','shutdown','now','SHUTTING DOWN'])
             #print('uncollectable garbage',gc.collect())
             print ('normal exit')

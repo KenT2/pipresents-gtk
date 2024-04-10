@@ -87,7 +87,7 @@ Install optional packages??????????
 Packages requiring pip must be installed in a virtual environment.
 
          python3 -m pip install DRV2605 (if you require haptic output and the DRV2605 I/O plugin)
-         sudo pip3 install evdev  (if you are using the input device I/O plugin)
+
 
 
 Download Pi Presents GTK
@@ -223,6 +223,7 @@ The fields in gpiozero.cfg differ from gpio.cfg, see manual and /pi_resources/pp
 
 The Keyboard I/O plugins have been rewritten for GTK4
 In keys.cfg and keys_plus.cfg, <> is optional, CTRL-F4 now F4
+osmcremote.cfg I/O plugin not required for remote controls, use keys.cfg
 
 SHOWS
 In all shows in the track defaults tab, player windows and aspect mode are modified as in Tracks
@@ -276,8 +277,9 @@ in screen .cfg fonts must of the format bold italic 20pt arial
 
 
 MISC
-modified - nounclutter is removed. Cursor is removed in fullscreen mode (-f) except if -c command line option is used.
-removed -b command line option to control blanking. Raspberry Pi Configuration menu now controls blanking
+installing unclutter is not required. The cursor is removed in fullscreen mode (-f) except if -c command line option is used.
+The -b command line option to control blanking is removed. Raspberry Pi Configuration menu now controls blanking
+Method to run Pi Presents with no monitor attached has changed. Use the NODISPLAY display instead of selecting A/V.
 
 
 Bug Reports and Feature Requests

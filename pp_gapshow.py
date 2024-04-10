@@ -89,8 +89,12 @@ class GapShow(Show):
             self.mon.err(self,'ShowTimeout has bad time: '+self.show_params['show-timeout'])
             self.end('error','ShowTimeout has bad time: '+self.show_params['show-timeout'])
             
-        self.track_count_limit = int(self.show_params['track-count-limit'])
+        if not self.show_params['track-count-limit'].isdigit():
+            self.mon.err(self,'Track Count Limit is not a number: '+self.show_params['track-count-limit'])
+            self.end('error','Track Count Limit is not a number: '+self.show_params['track-count-limit'])
             
+        self.track_count_limit = int(self.show_params['track-count-limit'])
+                       
         reason,message,self.interval = Show.calculate_duration (self, self.show_params['interval'])
         if reason=='error':
             self.mon.err(self,'Interval has bad time: '+self.show_params['interval'])

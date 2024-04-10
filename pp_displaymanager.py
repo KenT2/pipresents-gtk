@@ -16,12 +16,12 @@ class DisplayManager(object):
 
     debug = True
     #x11
-    x11_display_map = {'DSI0':'DSI-1','HDMI0':'HDMI-1','DSI1':'DSI-2','HDMI1':'HDMI-2'}
-    x11_display_reverse_map = {'DSI-1':'DSI0','HDMI-1':'HDMI0','DSI-2':'DSI0','HDMI-2':'HDMI1' } 
+    x11_display_map = {'NODISPLAY':'NOOP-1','DSI0':'DSI-1','HDMI0':'HDMI-1','DSI1':'DSI-2','HDMI1':'HDMI-2'}
+    x11_display_reverse_map = {'NOOP-1':'NODISPLAY','DSI-1':'DSI0','HDMI-1':'HDMI0','DSI-2':'DSI0','HDMI-2':'HDMI1' } 
     
     #wayland
-    wayland_display_map = {'DSI0':'DSI-1','HDMI0':'HDMI-A-1','DSI1':'DSI-2','HDMI1':'HDMI-A-2'}
-    wayland_display_reverse_map = {'DSI-1':'DSI0','HDMI-A-1':'HDMI0','DSI-2':'DSI0','HDMI-A-2':'HDMI1' } 
+    wayland_display_map = {'NODISPLAY':'NOOP-1','DSI0':'DSI-1','HDMI0':'HDMI-A-1','DSI1':'DSI-2','HDMI1':'HDMI-A-2'}
+    wayland_display_reverse_map = {'NOOP-1':'NODISPLAY','DSI-1':'DSI0','HDMI-A-1':'HDMI0','DSI-2':'DSI0','HDMI-A-2':'HDMI1' } 
     
     # Class Variables
     
@@ -316,19 +316,21 @@ class DisplayManager(object):
         self.print_canvas()
         return 'normal','',self.get_window_obj(self.develop_id)
         
-    def e_close_callback(self,dummy):
-        self.close_callback()
+    def e_close_callback(self,win):
+        self.close_callback(win)
     
 
     def on_key_press_event(self,keyval, keycode, state, user_data, win):
-        #print("Key press on window: ", win.get_title())
-        #print("          State: ", state)
-        #print("          keyval: ", keyval)
-        #print("          keycode: ", keycode)
-        #print ('shift mask',enum(Gdk.ModifierType.SHIFT_MASK))
-        #print ('State and Shift mask',state & Gdk.ModifierType.SHIFT_MASK)
         keyname=Gdk.keyval_name(keycode)
-        #print("          keyname: ", keyname)
+        if DisplayManager.debug is True:
+            print('keyname: ', keyname,"keycode: ", keycode)
+            #print("Window: ", win.get_title())
+            #print("          State: ", state)
+            #print("          keyval: ", keyval)
+
+            #print ('shift mask',enum(Gdk.ModifierType.SHIFT_MASK))
+            #print ('State and Shift mask',state & Gdk.ModifierType.SHIFT_MASK)
+
 
 
         if keyname=='F1'and DisplayManager.options['fullscreen'] is False:
@@ -511,7 +513,7 @@ class DisplayManager(object):
         print (command,wayland_name)
 
         if command == 'on':
-            os.system('wlr-randr --output '+ wayland_name + ' --preferred')
+            os.system('wlr-randr --output '+ wayland_name + ' --on')
             return 'normal',''
             
         elif command == 'off':
@@ -665,7 +667,8 @@ class Display(object):
             print ('Error',message)
             
     def callback(self,keycode,win):
-        print ('callback',keycode)
+        ##print ('callback',keycode)
+        pass
         
     
     def end(self,win):

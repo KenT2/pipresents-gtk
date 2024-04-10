@@ -200,8 +200,9 @@ class MPVDriver(object):
 
 
     def show_complete_change(self,name,value):
+        self.show_position=-1
         #print (name,value)
-        #print (self.freeze_at_end,name,value,self.duration)
+        #print (name,value,self.duration,self.duration-0.12)
         if self.freeze_at_end =='yes':
             #if name =='time-pos' and value is None:
                 #print('mpv video overrun, time-pos is: ',value)
@@ -225,7 +226,7 @@ class MPVDriver(object):
     def show_status_loop(self):
         if self.show_status_timer !=None:
             GLib.source_remove(self.show_status_timer)
-        self.show_status_timer=None
+            self.show_status_timer=None
         if self.quit_show_signal is True:
             self.quit_show_signal= False
             if self.freeze_at_end == 'yes':
@@ -245,6 +246,7 @@ class MPVDriver(object):
             if self.freeze_at_end == 'yes':
                 self.player.pause=True
                 self.frozen_at_end=True
+                #print (self.show_position)
                 self.mon.log(self,'paused at end at: '+str(self.show_position))
                 self.state='show-pauseatend'
                 return
