@@ -158,10 +158,11 @@ class MPVPlayer(Player):
             status,message,self.mpv_sink = self.am.get_sink(self.mpv_audio)
             if status == 'error':
                 return status,message
+            #print(self.mpv_audio,self.mpv_sink)
                     
             if not self.am.sink_connected(self.mpv_sink):
-                self.mon.err(self,'"'+self.mpv_audio +'" display or audio device not connected\n\n    Expected sink is: '+ self.mpv_sink)
-                return 'error',self.mpv_audio +'display or audio device not connected'
+                self.mon.err(self,'"'+self.mpv_audio +'"audio device not connected\n\n    Expected sink is: '+ self.mpv_sink)
+                return 'error',self.mpv_audio +'audio device not connected'
                     
             self.add_option('ao','pulse')
         else:

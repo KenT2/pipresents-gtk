@@ -58,7 +58,7 @@ The full manual in English is here https://github.com/KenT2/pipresents-gtk/blob/
 Requirements
 -------------
  
-	* must use the latest version of RPi OS Bookworm with Desktop 32???? bit, (not the Lite version)
+	* must use the latest version of 32 bit RPi OS Bookworm with Desktop, (not the Lite version)
 	* must be run from the PIXEL desktop.
 	* can be installed and run from any user that is created with RPi OS utilities
 	* should use a clean install of RPi OS, particularly if you intend to use GPIO
@@ -66,7 +66,7 @@ Requirements
 Install RPi OS Bookworm
 -----------------------
 
-Image a SD Card with the RPi OS Bookworm with desktop (32 Bit)?????.
+Image a SD Card with the RPi OS Bookworm with desktop (32 Bit).
 
 Ensure the OS is up to date:
 
@@ -82,7 +82,7 @@ Install required packages
          sudo apt install python3-pymediainfo
          sudo apt install mpg123         
          
-Install optional packages??????????
+Install optional packages
 ------------------------------
 Packages requiring pip must be installed in a virtual environment.
 
@@ -111,7 +111,7 @@ Run Pi Presents to check the installation is successful. From a terminal window 
 
          python pipresents.py
 
-You will see a window with an error message which is because you have no profiles. Click OK to exit Pi Presents. ??????
+You will see a window with an error message which is because you have no profiles. Click OK to exit Pi Presents.
 
 
 Download the Example Profiles
@@ -196,8 +196,8 @@ You will now need to make the following manual modifications:
       * Audio tracks using mplayer are now removed and will be deleted from the profile by the update. Any reference to them will be retained.  You will need to create new equivalent tracks using the MPV Video/Audio track. 
 
       * Web tracks that used the UZBL browser are now removed and will be deleted from the profile by the update. Any reference to them will be retained. You will need to create new equivalent tracks using the Chrome Web track.
-	  
-	 * Chrome Web tracks that used the chromium browser are now removed and will be deleted from the profile by the update. Any reference to them will be retained. You will need to create new equivalent tracks using the Chrome Web track.
+ 
+    * Chrome Web tracks that used the chromium browser are now removed and will be deleted from the profile by the update. Any reference to them will be retained. You will need to create new equivalent tracks using the Chrome Web track.
 
     * For Audio tracks the Audio Player volume range is now 0>100 instead of -60>0
       

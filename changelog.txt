@@ -1,4 +1,4 @@
-CHANGES FOR 1.6.1a  ??/4/2024
+CHANGES FOR 1.6.1a  11/4/2024
 ===================================
 
 Version 1.6 has major changes to the internals of Pi Presents to make it compatible with Wayland and RPi5 GPIO. Other changes have been made to remove unsupported software. I have also tidied up some of the profile fields that have grown like topsy over the 10 years of Pi Presents.
@@ -19,7 +19,6 @@ GPIOZero I/O plugin replaces RPI.GPIO. Required for RPi 5, GPIOZero also works w
 enhanced - GPIOZero allows blinking of outputs via animate commands
 enhanced - GPIOZero allows repeating events to be produced if a button is held.
 modified - gpiozero.cfg the fields differ from gpio.cfg fields
-
 
 Keyboard I/O plugin rewritten for GTK4
 modified - keys.cfg and keys_plus.cfg, <> is optional, CTRL-F4 now F4
@@ -86,12 +85,11 @@ enhanced - F1 key toggles the development display between windowed and near full
 modified - nounclutter is removed. Cursor is removed in fullscreen mode (-f) except if -c command line option is used.
 modified - removed -b command line option to control blanking. Raspberry Pi Configuration menu now controls blanking
 modified - updated input_test.py and output_test.py for GPIOZero
-
+modified - autostart method has changed. See manual
+modified - Method to run Pi Presents with no monitor attached has changed.
 
 EDITOR
 fixed - text in colour fields can now be modified after colour chooser is used.
-
-
 
 
 CHANGES FOR 1.5.3e  4/12/2023

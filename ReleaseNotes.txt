@@ -1,4 +1,4 @@
-Version 1.6.1a ??4/2024
+Version 1.6.1a 11/4/2024
 =========================
 pipresents-gtk is a major rewrite to make it compatible with Raspberry Pi Model 5 and with the Wayland Desktop environment introduced in RPI OS Bookworm.
 
