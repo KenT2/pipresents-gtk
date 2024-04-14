@@ -1,7 +1,7 @@
 PI PRESENTS  - Version 1.6.1 (GTK)
 ==================================
 
-pipresents-gtk is a major rewrite to make it compatible with Raspberry Pi Model 5 and with the Wayland Desktop environment introduced in RPI OS Bookworm.
+pipresents-gtk is a major rewrite of the internals of Pi Prenets to make it compatible with Raspberry Pi Model 5 and with the Wayland Desktop environment introduced in RPI OS Bookworm.
 
 In addition other changes have been made to remove unsupported software. I have also tidied up some of the profile fields that have grown like topsy over the 10 years of Pi Presents development.
  . Tkinter and PIL replaced by GTK4
@@ -9,9 +9,7 @@ In addition other changes have been made to remove unsupported software. I have 
  . Chrome web browser replaced by webkit browser engine
  . mplayer based audio player by MPV video player now plays audio
 
-GTK runs on a RPi5 or RPi4 under Bookworm with the Wayland DE. It will also run under Bookworm with the X11 DE. For both DE's there are currently some limitations listed in a later section.
-
-GTK will run on a RPi3 or earlier but only with the X11 desktop environment.
+GTK runs on a RPi5 or RPi4 under Bookworm with the Wayland DE.
 
 To use GPIO on a RPi model 5 the GPIOZero I/O plugin must be used. This plugin will work with any model of RPi
 
@@ -81,14 +79,6 @@ Install required packages
          sudo apt install python3-mpv
          sudo apt install python3-pymediainfo
          sudo apt install mpg123         
-         
-Install optional packages
-------------------------------
-Packages requiring pip must be installed in a virtual environment.
-
-         python3 -m pip install DRV2605 (if you require haptic output and the DRV2605 I/O plugin)
-
-
 
 Download Pi Presents GTK
 ----------------------------
@@ -133,13 +123,13 @@ Running an Example Profile
 --------------------------
 From a terminal window opened in the pipresents directory type:
 
-         GTK_A11Y=none python pipresents.py -p pp_mediashow_1p6
+         python pipresents.py -p pp_mediashow_1p6
  
 to see a repeating multimedia show
 
 Exit this with CTRL-BREAK or closing the window, then:
 
-          GTK_A11Y=none python pipresents.py -p pp_mediashow_1p6 -f
+          python pipresents.py -p pp_mediashow_1p6 -f
  
 to display full screen
 
