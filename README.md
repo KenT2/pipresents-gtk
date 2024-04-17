@@ -1,17 +1,21 @@
 PI PRESENTS  - Version 1.6.1 (GTK)
 ==================================
 
-pipresents-gtk is a major rewrite of the internals of Pi Prenets to make it compatible with Raspberry Pi Model 5 and with the Wayland Desktop environment introduced in RPI OS Bookworm.
+pipresents-gtk is a major rewrite of the internals of Pi Presents to make it compatible with Raspberry Pi Model 5 and with the Wayland Desktop environment introduced in RPI OS Bookworm.
 
-In addition other changes have been made to remove unsupported software. I have also tidied up some of the profile fields that have grown like topsy over the 10 years of Pi Presents development.
+Other changes have been made to remove unsupported software and I have also tidied up some of the profile fields that have grown like topsy over the 10 years of Pi Presents development.
+
  . Tkinter and PIL replaced by GTK4
+ 
  . RPI.GPIO replaced by GPIOZero
- . Chrome web browser replaced by webkit browser engine
- . mplayer based audio player by MPV video player now plays audio
+ 
+ . Chrome web browser replaced by Webkit browser engine
+ 
+ . mplayer based audio player removed. MPV video player now plays audio
 
-GTK runs on a RPi5 or RPi4 under Bookworm with the Wayland DE.
+GTK runs on a RPi5 or RPi4 under Bookworm using the Wayland Desktop Environment.
 
-To use GPIO on a RPi model 5 the GPIOZero I/O plugin must be used. This plugin will work with any model of RPi
+To use GPIO on a RPi model 5 the GPIOZero I/O plugin must be used. This plugin will work with any model of RPi.
 
 
 TO INSTALL PIPRESENTS-GTK
@@ -19,7 +23,7 @@ TO INSTALL PIPRESENTS-GTK
 Read the 'Installing Pi Presents KMS' section below.
 
 
-TO UPGRADE FROM EARLIER VERSIONS OF PIPRESENTS KMS, BEEP< OR GAPLESS
+TO UPGRADE FROM EARLIER VERSIONS OF PIPRESENTS KMS, BEEP, OR GAPLESS
 --------------------------------------------------------------
 Read the 'Updating Pi Presents from Pi Presents KMS, Beep or Gapless' section below.
 
