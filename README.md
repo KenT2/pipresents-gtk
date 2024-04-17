@@ -5,6 +5,8 @@ pipresents-gtk is a major rewrite of the internals of Pi Presents to make it com
 
 Other changes have been made to remove unsupported software and I have also tidied up some of the profile fields that have grown like topsy over the 10 years of Pi Presents development.
 
+ . X11 replaced by Wayland 
+
  . Tkinter and PIL replaced by GTK4
  
  . RPI.GPIO replaced by GPIOZero
