@@ -20,7 +20,7 @@ To use GPIO on a RPi model 5 the GPIOZero I/O plugin must be used. This plugin w
 
 # TO INSTALL PIPRESENTS-GTK
 
-Read the 'Installing Pi Presents KMS' section below.
+Read the 'Installing Pi Presents GTK' section below.
 
 
 # TO UPGRADE FROM EARLIER VERSIONS OF PIPRESENTS KMS, BEEP, OR GAPLESS
@@ -145,9 +145,9 @@ Backup the directories /home/pi/pipresents and /home/pi/pp_home. You will need t
 
 Pi Presents GTK requires Raspberry Pi OS Bookworm so first install the operating system on a new SD card and then follow the instructions above for a new install of Pi Presents GTK.
 
-Now modify the following directories:
+Now modify the following:
 
-## pipresents/pp_config
+## .cfg files in pipresents/pp_config
 
 Do not copy across pp_audio.cfg, pp_display.cfg, or pp_editor.cfg
 
@@ -226,24 +226,24 @@ osmcremote.cfg I/O plugin not required for remote controls, use keys.cfg
 
 In all shows, in the track defaults tab, player windows and aspect mode are modified as in Tracks.
 
-In mediashow input-persist has been removed. Use freeze at start>after_first_frame as in pp_videoplayout_1p6
+In mediashow, input-persist has been removed. Use freeze at start>after_first_frame as in pp_videoplayout_1p6
 
 
 ### ALL TRACKS
 
-Removed the HDMI value in the Display field, use HDM0 instead
+Removed the HDMI value in the Display field, use HDMI0 instead
 
 html text fields - links to resources must be full paths not relative
 
 The background image is fill'ed to fit the show canvas
 
-Player windows, removed x1 y1 x2 y2 format. Values are now fullscreen or x+y+w*h or w*h. See manual.
+Player windows, removed the x1 y1 x2 y2 format. Values are now fullscreen, x+y+w\*h, or w\*h. See manual.
 
 Font format changed to bold italic 20pt helvetica from helvetica 20 bold italic
 
 Colour fields cannot be blank
 
-Colour field values can be a 6 figure hex number, or an 8 figure providing opacity, or transparent
+Colour field values can be a 6 figure hex number, an 8 figure providing opacity, or transparent
 
 
 ### AUDIO TRACKS
@@ -255,62 +255,66 @@ Audio tracks are removed when updating the profile
 
 ### MPV VIDEO/AUDIO TRACKS
 
-tracks now have MPV Speaker field and 5.1 value
+Tracks now have MPV Speaker field and 5.1 value
 
-tracks now have a Alternate Video Display field for video playout on a different display
+Tracks now have a Alternate Video Display field for video playout on a different display
 
-changed hdmix to HDMIx in the MPV Player Audio field
+Changed hdmi0, hdmi1 to HDMI0, HDMI1 in the MPV Player Audio field
 
-aspect mode is now clip fill warp shrink, original value is deleted
+Aspect mode is now clip, fit, warp, or shrink. original value is deleted
 
-showcanvas/display from MPV window. Window is now referenced to show canvas
+Remove showcanvas/display from MPV window field. Window is now always referenced to show canvas
 
 
 ### IMAGE TRACKS
 
-aspect mode removed from image window field to a seperate aspect mode field
+Aspect mode removed from image window field to a seperate aspect mode field
 
-aspect mode can be clip fit shrink warp, original has been deleted
+Aspect mode is now clip, fit, warp, or shrink. original value is deleted
 
-image window is referenced to show canvas not display
+Image window is referenced to show canvas not display
 
-removed rotation field
+Removed rotation field
 
 
 ### WEB TRACKS
 
 Web tracks are now implemented by the Webkit browser engine instead of Chrome
 
-chrome web track entries are removed when updating profiles
+Chrome web track entries are removed when updating profiles
 
-removed window type from web window
+Removed window type from web window
+
 
 ### MENU TRACKS
 
-menu window should be x+y+w*h, the w*h element is used only for the bounding box. See manual
+menu window should be x+y+w\*h, the w\*h element is used only for the bounding box. See manual
 
 menu window is referenced to show canvas it is not centred but is controlled by x,y.
 
+
 ### DUMMY TRACKS
 
-instead of the audio track, messageplayer or imageplayer can be a dummy tracks
+Instead of the audio track, message tracks or image tracks can be a dummy track
 
 
 ### CLICK AREAS
 
-in screen.cfg image width and height are not required. They will be ignored
+In screen.cfg image width and height are not required. They will be ignored
 
-in screen.cfg fill and outline colour fields must have a value. Colour field values can be transparent, a 6 figure hex number, or an 8 figure providing opacity.
+In screen.cfg fill and outline colour fields must have a value. Colour field values can be transparent, a 6 figure hex number, or an 8 figure providing opacity.
 
-in screen .cfg font format changed to bold italic 20pt helvetica from helvetica 20 bold italic
+In screen .cfg font font format changed to bold italic 20pt helvetica from helvetica 20 bold italic
 
 ### MISC
 
-installing unclutter is not required. The cursor is removed in fullscreen mode (-f) except if -c command line option is used.
+Installing unclutter is not required. The cursor is removed in fullscreen mode (-f) except if -c command line option is used.
 
 The -b command line option to control blanking is removed. Raspberry Pi Configuration menu now controls blanking
 
 Method to run Pi Presents with no monitor attached has changed. Use the NODISPLAY display instead of selecting A/V.
+
+Autostart methid has changed to editing wayfire.ini. See manual
 
 
 # Bug Reports and Feature Requests
