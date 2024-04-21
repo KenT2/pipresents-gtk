@@ -1,17 +1,17 @@
-#PI PRESENTS  - Version 1.6.1 (GTK)
+# PI PRESENTS  - Version 1.6.1 (GTK)
 
 pipresents-gtk is a major rewrite of the internals of Pi Presents to make it compatible with Raspberry Pi Model 5 and with the Wayland Desktop environment introduced in RPI OS Bookworm.
 
 Other changes have been made to remove unsupported software and I have also tidied up some of the profile fields that have grown like topsy over the 10 years of Pi Presents development.
 
-    * X11 replaced by Wayland 
-    * Tkinter and PIL replaced by GTK4
+* X11 replaced by Wayland 
+* Tkinter and PIL replaced by GTK4
  
-    * RPI.GPIO replaced by GPIOZero
+* RPI.GPIO replaced by GPIOZero
  
-    * Chrome web browser replaced by Webkit browser engine
+* Chrome web browser replaced by Webkit browser engine
  
-    * mplayer based audio player removed. MPV video player now plays audio
+* mplayer based audio player removed. MPV video player now plays audio
 
 GTK runs on a RPi5 or RPi4 under Bookworm using the Wayland Desktop Environment.
 
@@ -56,10 +56,10 @@ The full manual in English is here https://github.com/KenT2/pipresents-gtk/blob/
 
 ## Requirements
 
-    * must use the latest version of 32 bit RPi OS Bookworm with Desktop, (not the Lite version)
-    * must be run from the PIXEL desktop.
-    * can be installed and run from any user that is created with RPi OS utilities
-    * should use a clean install of RPi OS, particularly if you intend to use GPIO
+* must use the latest version of 32 bit RPi OS Bookworm with Desktop, (not the Lite version)
+* must be run from the PIXEL desktop.
+* can be installed and run from any user that is created with RPi OS utilities
+* should use a clean install of RPi OS, particularly if you intend to use GPIO
 
 ## Install RPi OS Bookworm
 
@@ -81,17 +81,17 @@ Ensure the OS is up to date:
 
 ## Download Pi Presents GTK
 
-THE GUI WAY
+**THE GUI WAY**
 
-        Using a browser go to https://github.com/KenT2/pipresents-gtk
-        Click the green CODE button and Download ZIP
-        There should now be a file 'pipresents-gtk-master.zip' in your /downloads directory. Unzip the file and copy the directory to /home. Rename it to pipresents
+* Using a browser go to https://github.com/KenT2/pipresents-gtk
+* Click the green CODE button and Download ZIP
+* There should now be a file 'pipresents-gtk-master.zip' in your /downloads directory. Unzip the file and copy the directory to /home. Rename it to pipresents
 
-THE COMMAND LINE WAY
+**THE COMMAND LINE WAY**
 
 From a terminal window open in your home directory type:
 
-         wget https://github.com/KenT2/pipresents-gtk/tarball/master -O - | tar xz     # -O is a capital Ohhh...
+    wget https://github.com/KenT2/pipresents-gtk/tarball/master -O - | tar xz     # -O is a capital Ohhh...
 
 There should now be a directory 'KenT2-pipresents-gtk-master' in your /home/pi directory. Copy or rename the directory to pipresents
 
@@ -99,7 +99,7 @@ There should now be a directory 'KenT2-pipresents-gtk-master' in your /home/pi d
 
 Run Pi Presents to check the installation is successful. From a terminal window opened in the pipresents directory type:
 
-        python pipresents.py
+    python pipresents.py
 
 You will see a window with an error message which is because you have no profiles. Click OK to exit Pi Presents.
 
@@ -108,17 +108,17 @@ You will see a window with an error message which is because you have no profile
 
 Examples are in the github repository pipresents-gtk-examples.
 
-THE GUI WAY
+**THE GUI WAY**
 
-        Using a browser go to https://github.com/KenT2/pipresents-gtk-examples
-        Click the green CODE button and Download ZIP
-        There should now be a file pipresents-gtk-examples-master.zip' in your /downloads directory. Unzip the file and copy the directory /pp_home to /home/pi.
+* Using a browser go to https://github.com/KenT2/pipresents-gtk-examples
+* Click the green CODE button and Download ZIP
+* There should now be a file pipresents-gtk-examples-master.zip' in your /downloads directory. Unzip the file and copy the directory /pp_home to /home/pi.
 
-THE COMMAND LINE WAY
+**THE COMMAND LINE WAY**
 
 Open a terminal window in your home directory and type:
 
-         wget https://github.com/KenT2/pipresents-gtk-examples/tarball/master -O - | tar xz
+     wget https://github.com/KenT2/pipresents-gtk-examples/tarball/master -O - | tar xz
 
 There should now be a directory 'KenT2-pipresents-gtk-examples-master' in the /home/pi directory. Open the directory and copy the 'pp_home' directory and its contents to the home directory /home/pi.
 
@@ -126,13 +126,13 @@ There should now be a directory 'KenT2-pipresents-gtk-examples-master' in the /h
 
 From a terminal window opened in the pipresents directory type:
 
-         python pipresents.py -p pp_mediashow_1p6
+    python pipresents.py -p pp_mediashow_1p6
  
 to see a repeating multimedia show
 
 Exit this with CTRL-BREAK or closing the window, then:
 
-        python pipresents.py -p pp_mediashow_1p6 -f
+    python pipresents.py -p pp_mediashow_1p6 -f
  
 to display it full screen
 
@@ -174,7 +174,7 @@ Copy any files you have made or changed from the old to new /pipresents/pp_track
 
 
 
-## Updating Profiles for use in Pi Presents GTK
+# Updating Profiles for use in Pi Presents GTK
 
 Copy the /pp_home directory from your backup to the /home/pi directory of your SD card.
 
@@ -195,6 +195,7 @@ You will now need to make the following manual modifications:
 * For MPV video/audio tracks the Audio Volume range is now 0>100 instead of -60>0
       
 * Videoplayout has changed yet again, back to its original method. See manual and pp_videoplayout_1p6 example
+
       
 To help with replacing the removed tracks there are two features:
 
@@ -220,11 +221,13 @@ The Keyboard I/O plugins have been rewritten for GTK4.In keys.cfg and keys_plus.
 
 osmcremote.cfg I/O plugin not required for remote controls, use keys.cfg
 
+
 ### SHOWS
 
 In all shows, in the track defaults tab, player windows and aspect mode are modified as in Tracks.
 
 In mediashow input-persist has been removed. Use freeze at start>after_first_frame as in pp_videoplayout_1p6
+
 
 ### ALL TRACKS
 
@@ -263,7 +266,7 @@ aspect mode is now clip fill warp shrink, original value is deleted
 showcanvas/display from MPV window. Window is now referenced to show canvas
 
 
-###IMAGE TRACKS
+### IMAGE TRACKS
 
 aspect mode removed from image window field to a seperate aspect mode field
 
