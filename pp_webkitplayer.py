@@ -46,7 +46,7 @@ class WebKitPlayer(Player):
 
         self.mon.trace(self,'')
         
-        self.css=CSS
+        #self.css=CSS
         
         # and initialise things for this player        
         self.dm=DisplayManager()
@@ -68,7 +68,7 @@ class WebKitPlayer(Player):
             self.freeze_at_end= self.track_params['webkit-freeze-at-end']
         else:
             self.freeze_at_end= self.show_params['webkit-freeze-at-end']
-        print ('track',self.track_params['webkit-freeze-at-end'],'show',self.show_params['webkit-freeze-at-end'])
+        #print ('track',self.track_params['webkit-freeze-at-end'],'show',self.show_params['webkit-freeze-at-end'])
         if self.track_params['webkit-zoom'] != '':
             self.webkit_zoom_text= self.track_params['webkit-zoom']
         else:
@@ -161,6 +161,7 @@ class WebKitPlayer(Player):
             if self.loaded_callback is not  None:
                 self.loaded_callback('error',message)
                 return
+        #print ('end of load')
         self.load_timer=GLib.timeout_add(10,self.load_state_machine)
         
         
@@ -188,7 +189,7 @@ class WebKitPlayer(Player):
         status,message,self.x,self.y,width,height=self.parse_window(self.webkit_window_text)
         if status =='error':
             return 'error',message
-        
+        #print ('load track content')
         self.webview=WebKit.WebView()
         self.webview.set_size_request(width,height)
         self.webview.set_zoom_level(self.zoom)
@@ -199,7 +200,9 @@ class WebKitPlayer(Player):
         return 'normal',''
 
     def show_track_content(self):
+        #print ('show track content')
         if self.webview!=None:
+            #self.canvas.put(self.webview,self.x,self.y)
             self.webview.set_visible(True)
             pass
 
@@ -237,6 +240,7 @@ class WebKitPlayer(Player):
         self.duration_count=self.duration
         #print ('SHOW',self.webview.is_loading())
         #self.show_state_machine()
+        #self.driver_get(self.track)
         self.show_timer=GLib.timeout_add(10, self.show_state_machine)
 
         
@@ -257,7 +261,7 @@ class WebKitPlayer(Player):
                     self.command_timer=None
                 if self.quit_signal is True:
                     self.quit_signal=False
-                print ('freeze',self.freeze_at_end)
+                #print ('freeze',self.freeze_at_end)
                 if self.freeze_at_end =='yes':
                     self.mon.log(self,'webkit says pause_at_end')
                     if self.finished_callback is not None:
@@ -270,7 +274,8 @@ class WebKitPlayer(Player):
                     if self.closed_callback is not  None:
                         self.closed_callback('normal','webkitdriver closed')
                     return
-            else:        
+            else:
+                #print ('state machine repeat')
                 self.show_timer=GLib.timeout_add(50, self.show_state_machine)
 
                     
@@ -336,7 +341,7 @@ class WebKitPlayer(Player):
         else:
             f = open(url, "r")
             self.webview.load_html(f.read(),'file:/'+url)
-            return 'normal',''
+        return 'normal',''
 
         
 
