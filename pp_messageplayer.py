@@ -1,13 +1,14 @@
 
 from pp_utils import StopWatch,calculate_text_position
 from pp_player import Player
+from pp_gtkutils import CSS
 import os
 import gi
 gi.require_version("Gtk", "4.0")
 from gi.repository import Gtk,Gdk,GLib
 gi.require_version("WebKit", "6.0")
 from gi.repository import WebKit
-from pp_gtkutils import CSS
+
 
 class MessagePlayer(Player):
 
@@ -276,15 +277,17 @@ class MessagePlayer(Player):
 
     def show_track_content(self):
         #print ('showing message')
+        self.mon.log(self,">show received from show Id: "+ str(self.show_id))
         if self.track_object!=None:
             self.track_object.set_visible(True)
 
 
     def hide_track_content(self):
-        #print ('hiding message')
+        self.mon.log(self,">hide received from show Id: "+ str(self.show_id))
         if self.track_object!= None:
             self.track_object.set_visible(False)
             self.canvas.remove(self.track_object)
+
 
 
     

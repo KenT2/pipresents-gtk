@@ -317,11 +317,12 @@ class DisplayManager(object):
         return 'normal','',self.get_window_obj(self.develop_id)
         
     def e_close_callback(self,win):
-        self.close_callback(win)
+        self.close_callback()
     
 
     def on_key_press_event(self,keyval, keycode, state, user_data, win):
         keyname=Gdk.keyval_name(keycode)
+        #print('keyname: ', keyname,"keycode: ", keycode)
         if DisplayManager.debug is True:
             print('keyname: ', keyname,"keycode: ", keycode)
             #print("Window: ", win.get_title())

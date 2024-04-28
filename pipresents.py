@@ -746,7 +746,7 @@ class PiPresents(object):
         self.terminate()
 
 
-    def handle_user_abort(self,win):
+    def handle_user_abort(self):
         self.mon.log(self,'User abort received')
         self.terminate()
 
