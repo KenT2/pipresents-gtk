@@ -1,5 +1,7 @@
 # PI PRESENTS  - Version 1.6.1 (GTK)
 
+## WARNING: pipresesents-gtk currently has a bug which causes the mpv based videoplayer to crash after a number of tracks are played. See Issue #3. I am working to fix it but it might take a while, sorry.
+
 pipresents-gtk is a major rewrite of the internals of Pi Presents to make it compatible with Raspberry Pi Model 5 and with the Wayland Desktop environment introduced in RPI OS Bookworm.
 
 Other changes have been made to remove unsupported software and I have also tidied up some of the profile fields that have grown like topsy over the 10 years of Pi Presents development.
