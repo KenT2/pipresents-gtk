@@ -1,3 +1,7 @@
+CHANGES FOR 1.6.1b  29/5/2025
+===================================
+fixed - Using the A/V sink for MPVplayer caused an error
+
 CHANGES FOR 1.6.1a  11/4/2024
 ===================================
 

@@ -6,7 +6,7 @@ from pp_utils import find_pi_model
 class AudioManager(object):
 
     config=None
-    profile_names=('HDMI0','HDMI1','USB','USB2','bluetooth')
+    profile_names=('HDMI0','HDMI1','USB','USB2','bluetooth','A/V')
     sink_map={}
 
     
