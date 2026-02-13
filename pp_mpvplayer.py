@@ -146,11 +146,7 @@ class MPVPlayer(Player):
         
         self.options=[]
         
-        self.add_option('input-default-bindings','no')
-        self.add_option('input-vo-keyboard','no')
-        self.add_option('osc','no')
-        
-            
+
         # AUDIO
         #print (self.mpv_audio)
         self.audio_sys=self.am.get_audio_sys()
@@ -171,11 +167,11 @@ class MPVPlayer(Player):
 
                 
         #AUDIO SPEAKER
-        self.add_option('audio-channels',self.speaker_option)   #fl-fr
+        self.add_option('audio_channels',self.speaker_option)   #fl-fr
                 
         # AUDIO DEVICE
         #print (self.mpv_audio,self.mpv_sink)
-        self.add_option ('audio-device','pulse/'+self.mpv_sink)
+        self.add_option ('audio_device','pulse/'+self.mpv_sink)
         
         # VOLUME
         if self.mpv_volume_text != "":
@@ -236,11 +232,11 @@ class MPVPlayer(Player):
             
             # ASPECT MODE
             if self.mpv_aspect_mode == 'warp':
-                self.add_option('video-aspect-override',str(self.width)+':'+str(self.height))
+                self.add_option('video_aspect_override',str(self.width)+':'+str(self.height))
             elif self.mpv_aspect_mode == 'fit':
-                self.add_option('video-aspect-override','-1')
+                self.add_option('video_aspect_override','-1')
             elif self.mpv_aspect_mode == 'shrink':
-                self.add_option('video-unscaled','downscale-big')
+                self.add_option('video_unscaled','downscale-big')
             elif self.mpv_aspect_mode == 'clip':
                 #self.add_option('panscan','0.5')
                 #self.add_option('video-scale-x',str(self.width/576))
@@ -582,7 +578,7 @@ class MPVPlayer(Player):
 # ************************
 
     def input_pressed(self,symbol):
-        print ('mpv',symbol)
+        #print ('mpv',symbol)
         if symbol == 'inc-volume':
             self.inc_volume()
         elif symbol == 'dec-volume':
@@ -711,12 +707,12 @@ class MPVPlayer(Player):
         if text.strip() == '':
             return 'normal',''
         options=text.split(',')
-        print (options)
+        #print (options)
         for option in options:
             if option.count('=') !=1:
                 return 'error','malformed option: '+ option
             result=option.split('=')
-            self.add_option(result[0].strip(),result[1].strip())
+            self.add_option(result[0].strip().replace("-", "_"),result[1].strip())
         return 'normal',''
 
 

@@ -800,6 +800,7 @@ class PiPresents(object):
         self.mon.log(self,"Pi Presents ending with reason: " + reason)
 
         self.tidy_up()
+        
 
         if reason == 'killed':
             if self.email_enabled is True and self.mailer.email_on_terminate is True:
@@ -811,6 +812,7 @@ class PiPresents(object):
 
             # close logging files
             self.mon.finish()
+            self.dm.close_windows(self.app)
             #print('Uncollectable Garbage',gc.collect())
             # objgraph.show_backrefs(objgraph.by_type('Canvas'),filename='backrefs.png')
             print ('killed exit')
@@ -839,7 +841,7 @@ class PiPresents(object):
 
             # close logging files
             self.mon.finish()
-            
+            self.dm.close_windows(self.app)
             if self.restartpipresents_required is True:
                 print ('restart exit')
                 self.app.quit()

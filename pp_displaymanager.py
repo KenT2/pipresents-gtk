@@ -156,7 +156,12 @@ class DisplayManager(object):
 
     def terminate(self):
         self.terminate_backlight()
-
+        
+    def close_windows(self,app):
+        for display in DisplayManager.displays:
+            #print ('closing',display)
+            win=DisplayManager.window_obj[display]
+            app.remove_window(win)
 
     def find_gtk_displays(self):
         display = Gdk.Display.get_default()
@@ -311,9 +316,9 @@ class DisplayManager(object):
                 #win.set_opacity(0)
                 #print ('monitor object',display,DisplayManager.monitor_obj[display])
                 win.fullscreen_on_monitor(DisplayManager.monitor_obj[display])
-                win.present()
+                win.present()                
                 #win.set_opacity(1)
-        self.print_canvas()
+        #self.print_canvas()
         return 'normal','',self.get_window_obj(self.develop_id)
         
     def e_close_callback(self,win):
@@ -322,7 +327,6 @@ class DisplayManager(object):
 
     def on_key_press_event(self,keyval, keycode, state, user_data, win):
         keyname=Gdk.keyval_name(keycode)
-        #print('keyname: ', keyname,"keycode: ", keycode)
         if DisplayManager.debug is True:
             print('keyname: ', keyname,"keycode: ", keycode)
             #print("Window: ", win.get_title())

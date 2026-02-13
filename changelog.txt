@@ -1,6 +1,10 @@
-CHANGES FOR 1.6.1b  29/5/2025
+CHANGES FOR 1.6.1b  8/2/2026
 ===================================
-fixed - Using the A/V sink for MPVplayer caused an error
+fixed - video playing is now reliable
+enhanced - pp-gtk works on RPi OS Trixie under X11
+fixed - various changes due to move to RPi OS trixie
+fixed - window HDMI1 not closing when PP is exited
+fixed  - crash when PP exits
 
 CHANGES FOR 1.6.1a  11/4/2024
 ===================================
