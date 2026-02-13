@@ -85,7 +85,7 @@ class MPVDriver(object):
 
         #video
         self.has_video=self.file_has_video(self.track)
-        print (self.has_video)
+        #print (self.has_video)
         window= self.canvas.get_root()
         wid= str(GdkX11.X11Surface.get_xid(window.get_surface()))
         self.player=MPV(input_default_bindings='no', input_vo_keyboard ='no',profile='fast',
