@@ -88,8 +88,10 @@ class MPVDriver(object):
         #print (self.has_video)
         window= self.canvas.get_root()
         wid= str(GdkX11.X11Surface.get_xid(window.get_surface()))
-        self.player=MPV(input_default_bindings='no', input_vo_keyboard ='no',profile='fast',
-        osc='no',config='no',border='no',wid=wid)
+        self.player=MPV(input_default_bindings='no', input_vo_keyboard ='no',osc='no',config='no',border='no',
+                            profile='fast',
+                            vo='gpu',gpu_api='opengl',gpu_dumb_mode='yes',hwdec='drm-copy',
+                            wid=wid)
 
         status,message=self.apply_options(self.options)
         if status == 'error':

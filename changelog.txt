@@ -1,3 +1,7 @@
+CHANGES FOR 1.6.1c  18/3/2026
+===================================
+enhanced  - modified mpv options to allow playing of higher resolution vidoes with lower CPU
+
 CHANGES FOR 1.6.1b  8/2/2026
 ===================================
 fixed - video playing is now reliable
